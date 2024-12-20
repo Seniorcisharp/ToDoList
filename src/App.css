@@ -1,0 +1,296 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 900px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  margin: auto;
+}
+
+.todo-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.todo-title img {
+  width: 3rem;
+  height: 3rem;
+  margin-left: 10px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-container input {
+  width: 50%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  margin-right: 10px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-container input:focus {
+  border-color: #007bff;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.search-container button {
+  padding: 0.8rem 1.5rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.search-container button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.todo-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background-color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.todo-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.todo-item.completed {
+  background-color: #f0f0f0;
+  text-decoration: line-through;
+}
+
+.todo-item input[type="checkbox"] {
+  margin-right: 15px;
+}
+
+.todo-item button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.todo-item:hover button {
+  opacity: 1;
+}
+
+.add-task-container {
+  margin-top: 30px;
+}
+
+.add-task-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.add-task-container input[type="text"],
+.add-task-container textarea {
+  width: calc(100% - 20px);
+  padding: 1rem;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.add-task-container input[type="text"]:focus,
+.add-task-container textarea:focus {
+  border-color: #28a745;
+  box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+}
+
+.add-task-container button {
+  padding: 0.8rem 1.5rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.add-task-container button:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+.importance-filters {
+  margin-top: 20px;
+}
+
+.importance-filters label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.importance-filters input {
+  margin-right: 10px;
+}
+
+.no-tasks-message {
+  text-align: center;
+  color: #888;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+@media (max-width: 1024px) {
+  .app-container {
+    width: 90%;
+  }
+
+  .todo-title {
+    font-size: 1.8rem;
+  }
+
+  .todo-title img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .search-container input {
+    width: 70%;
+    font-size: 0.9rem;
+  }
+
+  .search-container button {
+    padding: 0.7rem 1.2rem;
+  }
+
+  .todo-item {
+    padding: 0.9rem;
+  }
+
+  .add-task-container h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    width: 95%;
+  }
+
+  .todo-title {
+    font-size: 1.6rem;
+  }
+
+  .todo-title img {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .search-container input {
+    width: 100%;
+    font-size: 0.9rem;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .search-container button {
+    width: 100%;
+    padding: 0.7rem 1.2rem;
+  }
+
+  .todo-item {
+    padding: 0.8rem;
+  }
+
+  .todo-item button {
+    padding: 0.7rem;
+  }
+
+  .add-task-container h2 {
+    font-size: 1.2rem;
+  }
+
+  .add-task-container input[type="text"],
+  .add-task-container textarea {
+    width: 100%;
+  }
+
+  .add-task-container button {
+    width: 100%;
+    padding: 0.7rem 1.2rem;
+  }
+}
+
+input[type="text"], textarea {
+  width: calc(100% - 20px);
+  padding: 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  background-color: #f2f2f2;
+  color: #333;
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+input[type="text"]:focus, textarea:focus {
+  background-color: #fff;
+  box-shadow: 0 0 15px rgba(40, 167, 69, 0.5), inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  outline: none;
+  transform: translateY(-2px);
+}
+
+input[type="text"]:active, textarea:active {
+  box-shadow: 0 0 10px rgba(40, 167, 69, 0.3), inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  transform: translateY(1px);
+}
+
+input[type="text"]::placeholder, textarea::placeholder {
+  color: #999;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+input[type="text"]:focus, textarea:focus {
+  animation: glowInput 1s ease infinite alternate;
+}
