@@ -28,15 +28,6 @@ Ensure you have Node.js (version 16 or higher) and npm installed. Once that's co
 npm install
 ```
 
-### 3. Start the Local Server with JSON Server (If Using JSON Server)
-
-If your project uses JSON Server to mock the API, start the server with the following command:
-
-```bash
-npm run dev:db
-```
-
-This will start the JSON Server and provide an API at `http://localhost:3001`.
 
 ### 4. Run the Project
 
